@@ -1,0 +1,23 @@
+{
+    "TOKEN": "qfrtwsegtyer4ue",
+    "USER_ID": "455163804787933205",
+    "PREFIX": "!",
+    "cleaner": true,
+    "autoInject": true,
+    "autoLaunch": false,
+    "aduritePricing": true,
+    "usdStatus": true,
+    "embedColor": "#FF0000",
+    "placeId": "8737602449",
+    "instanceNumber": "20",
+    "customPricing": "3",
+    "processesRows": "2",
+    "cleanFilesDelay": 120,
+    "launchDelay": "60",
+    "injectDelay": 5,
+    "injectTimeout": 5,
+    "ctpb": "mind",
+    "autoClose": false,
+    "autoCloseInterval": "100",
+    "robloxIds": []
+    }

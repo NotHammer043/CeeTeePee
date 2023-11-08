@@ -1,0 +1,6 @@
+task.wait()
+until game.PlaceId ~= nil and game.JobId ~= nil
+
+game:GetService("NetworkClient").ChildRemoved:Connect(function()
+  game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+end)
