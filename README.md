@@ -62,6 +62,7 @@ Bot Token = To see who owns the bot and see the user thats trying to tamper with
 
 Screenshot = To make sure it wasn't a false alert
 
+Of course i knew that this could have been done from a different approach but by this time everything was in rush so none of the developers had time for implementing something complex.
 
 About Hunter:
 - Hunter is a innocent guy, but for some reason he got accused of putting the Malicious stuff on the code (He doesn't even have access to the bot code and he only worked on the UI). I asked raven to atleast clear his name but he refused to (Most likely because he hated him)
