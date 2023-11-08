@@ -1,3 +1,8 @@
+Looks like this is the end of CTP.
+
+Thank you for using CTP.
+----------------------
+
 Alot of people are asking me "What Happened between you and Raven", I cannot explain it properly because alot has happened and it lasted for months
 
 Note to Raven: Do not try to fucking make false claims about me, i know you deleted our DMS but i still saved it and you can't do anything about it
@@ -57,6 +62,7 @@ Bot Token = To see who owns the bot and see the user thats trying to tamper with
 
 Screenshot = To make sure it wasn't a false alert
 
+Of course i knew that this could have been done from a different approach but by this time everything was in rush so none of the developers had time for implementing something complex.
 
 About Hunter:
 - Hunter is a innocent guy, but for some reason he got accused of putting the Malicious stuff on the code (He doesn't even have access to the bot code and he only worked on the UI). I asked raven to atleast clear his name but he refused to (Most likely because he hated him)
