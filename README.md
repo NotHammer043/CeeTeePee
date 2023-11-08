@@ -1,3 +1,8 @@
+Looks like this is the end of CTP.
+
+Thank you for using CTP.
+----------------------
+
 Alot of people are asking me "What Happened between you and Raven", I cannot explain it properly because alot has happened and it lasted for months
 
 Note to Raven: Do not try to fucking make false claims about me, i know you deleted our DMS but i still saved it and you can't do anything about it
