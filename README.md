@@ -129,6 +129,8 @@ I wonder who said this
 
 I wonder where i made these robux i sold to buy your shit
 
+![image](https://github.com/NotHammer043/CeeTeePee/assets/107131733/4df95e8e-b9bb-491a-8359-99fd6b4a2810)
+
 ![image](https://github.com/NotHammer043/Random-Stuffs/assets/107131733/91467e79-332e-4c9f-b9a2-0a6c277c5180)
 ![image](https://github.com/NotHammer043/Random-Stuffs/assets/107131733/950b02ce-65b9-451d-84b7-aa84a23cd04e)
 ![image](https://github.com/NotHammer043/Random-Stuffs/assets/107131733/c007e6c3-af75-48b6-8b13-fec56fe544f0)
