@@ -116,6 +116,11 @@ Total: 35$
 
 (Still decides to offer 15k)
 
+Another offer from raven:
+
+![image](https://github.com/NotHammer043/CeeTeePee/assets/107131733/d3af9615-b0b9-4b45-ba0a-4b166ce73016)
+
+
 
 nanoMIDI:
 - Raven took my domain "nanomidi.app" and he claims that "Its his money" I sold all my devex robux for 50$ but what you did is buy random stuffs, you spent hundreds of dollars buying minecraft hacked clients. I never spent any of the money we both earned. You spent it all.
