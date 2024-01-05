@@ -52,7 +52,7 @@ Ask yourself these questions, not me. If you want to be a horrible friend then t
 
 CTP - August 6, 2023:
 
-CTP got exposed for "Malicously Logging" people, CTP's reputation got ruined not only because Tzech dickrides his partners (which hates CTP without even trying the software), but they also claimed that we were selling the data which is not true, it was only used for software protection, they also claimed that it would run when you open the software but in reality it would only run if the data sent did not match with the webserver's data
+CTP got exposed for "Malicously Logging" people, CTP's reputation got ruined, they claimed that we were selling the data which is not true, it was only used for software protection, they also claimed that it would run when you open the software but in reality it would only run if the data sent did not match with the webserver's data
 
 What it logged and its use:
 
