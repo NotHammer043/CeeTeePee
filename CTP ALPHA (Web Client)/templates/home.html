@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CTP - V1.0</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* Global styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #1c1c1c;
+        color: #fff;
+      }
+
+      /* Header styles */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+      }
+
+      h1 {
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      /* Main content styles */
+      main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      #message {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      #robux {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      #after-transfer {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      /* Button styles */
+      button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      /* Accounts list styles */
+      #accounts {
+        display: none;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      #account-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #account-list li {
+        margin-bottom: 10px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 10px;
+        width: 300px;
+      }
+
+      #account-list a {
+        color: white;
+        text-decoration: none;
+      }
+
+      #botjs-menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #close-button {
+        background-color: #f44336;
+        border-radius: 20px;
+        margin-top: 20px;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #close-button:hover {
+        background-color: #d32f2f;
+      }
+
+      #block-user {
+        background-color: #f44336;
+        border-radius: 20px;
+        margin-top: 20px;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #block-user:hover {
+        background-color: #d32f2f;
+      }
+
+      #copy-avatar {
+        background-color: #4CAF50;
+        border-radius: 20px;
+        margin-top: 20px;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #copy-avatar:hover {
+        background-color: #3e8e41;
+      }
+
+      #launch-account {
+        background-color: #4CAF50;
+        border-radius: 20px;
+        margin-top: 20px;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #launch-account:hover {
+        background-color: #3e8e41;
+      }
+
+      /* Center login button */
+      #login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="login">
+      <button onclick="update()">Log In</button>
+    </div>
+    <div id="message"></div>
+    <div id="robux"></div>
+    <div id="after-transfer"></div>
+    <button id="list-accounts" style="display: none;" onclick="listAccounts()">List Accounts</button>
+    <button id="launch-account" style="display: none;" onclick="launchAccount()">Launch Account</button>
+    <button id="copy-avatar" style="display: none;" onclick="copyAvatar()">Copy Avatar</button>
+    <div id="accounts">
+      <ul id="account-list"></ul>
+    </div>
+    <button id="block-user" style="display: none;" onclick="blockUser()">Block User</button>
+    <button id="botjs-button" style="display: none;" title="Bot.JS is required for this">Bot.JS</button>
+    <div id="botjs-menu" style="display: none;">
+      <label for="slval-input">SLVAL:</label>
+      <input type="checkbox" id="slval-input" name="slval">
+      <br>
+      <label for="abval-input">ABVAL:</label>
+      <input type="checkbox" id="abval-input" name="abval">
+      <br>
+      <label for="agval-input">AGVAL:</label>
+      <input type="checkbox" id="agval-input" name="agval">
+      <br>
+      <label for="arl-input">ARL:</label>
+      <input type="checkbox" id="arl-input" name="arl">
+      <br>
+      <label for="anon-input">ANON:</label>
+      <input type="checkbox" id="anon-input" name="anon">
+      <br>
+      <label for="ar-input">AR:</label>
+      <input type="checkbox" id="ar-input" name="ar">
+      <br>
+      <label for="ald-input">ALD:</label>
+      <input type="number" id="ald-input" name="ald" value="10">
+      <br>
+      <label for="ld-input">LD:</label>
+      <input type="number" id="ld-input" name="ld" value="100">
+      <br>
+      <label for="nopecha-input">Nopecha:</label>
+      <input type="text" id="nopecha-input" name="nopecha" value="placeholder">
+      <br>
+      <label for="aminval-input">AMINVAL:</label>
+      <input type="checkbox" id="aminval-input" name="aminval">
+      <br>
+      <label for="amdel-input">AMDEL:</label>
+      <input type="number" id="amdel-input" name="amdel" value="60">
+      <br>
+      <label for="pid-input">PID:</label>
+      <input type="number" id="pid-input" name="pid" value="8737602449">
+      <br>
+      <label for="hourlychannelid-input">Hourly Channel ID:</label>
+      <input type="number" id="hourlychannelid-input" name="hourlychannelid" value="">
+      <br>
+      <label for="hourlystatus-input">Hourly Status:</label>
+      <input type="checkbox" id="hourlystatus-input" name="hourlystatus">
+      <br>
+      <label for="accountstatuschannelid-input">Account Status Channel ID:</label>
+      <input type="number" id="accountstatuschannelid-input" name="accountstatuschannelid" value="">
+      <br>
+      <label for="accountstatus-input">Account Status:</label>
+      <input type="checkbox" id="accountstatus-input" name="accountstatus">
+      <br>
+      <button id="save-button">Save Changes</button>
+    </div>
+    <script>
+      function update() {
+        const login = document.getElementById('login');
+        login.innerHTML = 'You may have to wait a couple seconds';
+        fetch('/update').then(response => response.json()).then(data => {
+          const message = document.getElementById('message');
+          message.textContent = 'Connected successfully';
+          const robux = document.getElementById('robux');
+          robux.textContent = `Robux: ${data.robux}`;
+          const afterTransfer = document.getElementById('after-transfer');
+          afterTransfer.textContent = `After transfer: ${data.afterTransfer}`;
+          login.style.display = 'none';
+          const listAccountsButton = document.getElementById('list-accounts');
+          listAccountsButton.style.display = 'block';
+          const blockUserButton = document.getElementById('block-user');
+          blockUserButton.style.display = 'block';
+          const copyAvatarButton = document.getElementById('copy-avatar');
+          copyAvatarButton.style.display = 'block';
+          const launchAccountButton = document.getElementById('launch-account');
+          launchAccountButton.style.display = 'block';
+          const botjsbutton = document.getElementById('botjs-button');
+          botjsbutton.style.display = 'block';
+        });
+      }
+      $(document).ready(function() {
+        $('#botjs-button').click(function() {
+          console.log("Clicked bot.js button");
+          console.log("#botjs-menu visibility:", $('#botjs-menu').is(':visible'));
+          console.log("#botjs-menu element:", $('#botjs-menu'));
+          $('#botjs-menu').toggle();
+          console.log("#botjs-menu visibility after toggle:", $('#botjs-menu').is(':visible'));
+        });
+        $('#save-button').click(function() {
+          const config = {
+            ftime: false,
+            preval: ".",
+            slval: $('#slval-input').is(':checked'),
+            abval: $('#abval-input').is(':checked'),
+            agval: $('#agval-input').is(':checked'),
+            arl: true,
+            anon: false,
+            ar: true,
+            ald: parseInt($('#ald-input').val()),
+            ld: parseInt($('#ld-input').val()),
+            Nopecha: $('#nopecha-input').val(),
+            aminval: false,
+            amdel: 60,
+            pid: 8737602449,
+            hourlychannelid: $('#hourlychannelid-input').val() ? parseInt($('#hourlychannelid-input').val()) : "No channel set!",
+            hourlystatus: false,
+            accountstatuschannelid: $('#accountstatuschannelid-input').val() ? parseInt($('#accountstatuschannelid-input').val()) : "No channel set!",
+            accountstatus: false
+          };
+          $.ajax({
+            url: '/update-config',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(config),
+            success: function(response) {
+              console.log("Configuration saved successfully");
+            },
+            error: function(error) {
+              console.error("Error saving configuration:", error);
+            }
+          });
+        });
+      });
+
+      function listAccounts() {
+        const accounts = document.getElementById('accounts');
+        accounts.style.display = 'block';
+        const accountList = document.getElementById('account-list');
+        accountList.innerHTML = '';
+        fetch('/accounts').then(response => response.json()).then(data => {
+          data.forEach(account => {
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+            link.textContent = account.Username;
+            const robloxId = document.createElement('button');
+            robloxId.textContent = ` ${account.UserID}`;
+            robloxId.classList.add('account-details');
+            const dropdown = document.createElement('div');
+            dropdown.classList.add('account-dropdown');
+            dropdown.style.display = 'none';
+            const tabs = document.createElement('div');
+            tabs.classList.add('tab');
+            const profileTab = document.createElement('button');
+            profileTab.textContent = 'Profile Link';
+            profileTab.onclick = function(e) {
+              e.stopPropagation();
+              window.open(`https://www.roblox.com/users/${account.UserID}/profile`);
+            };
+            tabs.appendChild(profileTab);
+            const launchTab = document.createElement('button');
+            launchTab.textContent = 'Launch Account';
+            launchTab.onclick = function(e) {
+              e.stopPropagation();
+              console.log(`Launching account ${account.ID}`);
+            };
+            tabs.appendChild(launchTab);
+            const deleteTab = document.createElement('button');
+            deleteTab.textContent = 'Delete Account';
+            deleteTab.onclick = function(e) {
+              e.stopPropagation();
+              console.log(`Deleting account ${account.ID}`);
+            };
+            tabs.appendChild(deleteTab);
+            const closeTab = document.createElement('button');
+            closeTab.textContent = 'Close Dropdown';
+            closeTab.onclick = function(e) {
+              e.stopPropagation();
+              dropdown.style.display = 'none';
+            };
+            tabs.appendChild(closeTab);
+            dropdown.appendChild(tabs);
+            dropdown.appendChild(robloxId);
+            const accountIdBubble = document.createElement('div');
+            accountIdBubble.classList.add('account-id-bubble');
+            const accountIdButton = document.createElement('button');
+            accountIdButton.classList.add('account-id-button');
+            accountIdButton.textContent = account.ID;
+            accountIdButton.addEventListener('click', function() {
+              console.log(`Account ID: ${account.ID}`);
+            });
+            accountIdBubble.appendChild(accountIdButton);
+            li.appendChild(link);
+            li.appendChild(dropdown);
+            li.appendChild(accountIdBubble);
+            li.setAttribute('data-account-id', account.ID);
+            li.onclick = function() {
+              const selectedAccount = accountList.querySelector('.selected');
+              if (selectedAccount && selectedAccount !== li) {
+                selectedAccount.classList.remove('selected');
+                const dropdown = selectedAccount.querySelector('.account-dropdown');
+                dropdown.style.display = 'none';
+              }
+              li.classList.toggle('selected');
+              const dropdown = li.querySelector('.account-dropdown');
+              dropdown.style.display = li.classList.contains('selected') ? 'block' : 'none';
+            };
+            accountList.appendChild(li);
+          });
+        });
+      }
+      const closeButton = document.getElementById('close-button');
+      if (!closeButton) {
+        const closeButton = document.createElement('button');
+        closeButton.id = 'close-button';
+        closeButton.textContent = 'Close List';
+        closeButton.onclick = function() {
+          accounts.style.display = 'none';
+        };
+        accounts.appendChild(closeButton);
+      }
+
+      function deleteAccount(accountId) {
+        fetch('/accounts').then(response => response.json()).then(data => {
+          const filteredAccounts = data.filter(account => account.ID !== accountId);
+          fetch('/update-accounts', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(filteredAccounts)
+          }).then(() => {
+            moveAccountToStorage(accountId);
+          });
+        });
+      }
+
+      function moveAccountToStorage(accountId) {
+        const accountInfo = getAccountInfo(accountId);
+        fetch('/move-account-to-storage', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(accountInfo)
+        }).then(() => {
+          console.log(`Account ${accountId} moved to storageacc.json`);
+        });
+      }
+
+      function blockUser() {
+        const userId = prompt("Enter user ID to block:");
+        if (userId !== null && userId.trim() !== '') {
+          fetch(`/block/${userId}`).then(response => response.text()).then(data => {
+            alert(data);
+          });
+        }
+      }
+
+      function copyAvatar() {
+        const username = prompt("Enter your username:");
+        const copy = prompt("Enter the username or ID of the user to copy the avatar from:");
+        if (username && copy) {
+          fetch(`/copy-avatar/${username}/${copy}`).then(response => response.json()).then(data => {
+            alert(data.success ? "Avatar copied successfully" : "Failed to copy avatar");
+          });
+        }
+      }
+
+      function launchAccount() {
+        const accountList = document.getElementById('account-list');
+        const selectedAccount = accountList.querySelector('.selected');
+        if (selectedAccount) {
+          const accountId = selectedAccount.getAttribute('data-account-id');
+        }
+      }
+    </script>
+  </body>
+</html>
