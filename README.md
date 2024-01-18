@@ -157,7 +157,7 @@ More random images lol
 
 ![11](https://github.com/NotHammer043/CeeTeePee/assets/107131733/f1f75c9c-536b-4e7a-94c1-a9fd01032ca1)
 
-![image](https://github.com/NotHammer043/CeeTeePee/assets/107131733/b5905623-66c3-4392-b535-22511a178677)
+![image](https://github.com/NotHammer043/CeeTeePee/assets/107131733/62047157-5df6-439e-bf0b-cb005d59aeb5)
 
 
 How did i feel afterwards:
