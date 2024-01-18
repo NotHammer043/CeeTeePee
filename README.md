@@ -155,9 +155,10 @@ Raven's Common Sense:
 More random images lol
 
 
-![11](https://github.com/NotHammer043/CeeTeePee/assets/107131733/f1f75c9c-536b-4e7a-94c1-a9fd01032ca1)
+![11](https://github.com/NotHammer043/CeeTeePee/assets/107131733/7d90b3b9-8533-4d46-be68-e697981180ba)
 
-![image](https://github.com/NotHammer043/CeeTeePee/assets/107131733/62047157-5df6-439e-bf0b-cb005d59aeb5)
+![image](https://github.com/NotHammer043/CeeTeePee/assets/107131733/800dce10-482a-4328-8e01-fdad507c0d48)
+
 
 
 How did i feel afterwards:
